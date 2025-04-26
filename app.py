@@ -11,26 +11,14 @@ st.write("""
 Aplikasi ini membantu menghitung nilai pH dan pOH larutan berdasarkan input konsentrasi ion [H⁺] atau [OH⁻].
 """)
 
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.header("A cat")
-    st.image("https://static.streamlit.io/examples/cat.jpg")
-
-with col2:
-    st.header("A dog")
-    st.image("https://static.streamlit.io/examples/dog.jpg")
-
-with col3:
-    st.header("An owl")
-    st.image("https://static.streamlit.io/examples/owl.jpg")
-
 # Sidebar for input
 with st.sidebar:
     st.header("Input Parameter")
-    ion_type = st.radio("Pilih jenis ion yang diketahui:", ("[H⁺]", "[OH⁻]"))
+    ion_type = st.radio("Pilih jenis ion yang diketahui:", ("[H⁺]", "[OH⁻]"), captions=[
+        "H+ adalah simbol untuk Asam",
+        "OH- adalah simbol untuk Basa"
+    ])
     concentration = st.number_input(f"Masukkan konsentrasi {ion_type} (mol/L):", min_value=1e-14, max_value=1.0, format="%.2e")
-    show_dark_mode = st.checkbox("Aktifkan Mode Gelap")
 
 # Apply dark mode
 if show_dark_mode:
