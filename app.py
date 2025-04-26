@@ -20,17 +20,6 @@ with st.sidebar:
     ])
     concentration = st.number_input(f"Masukkan konsentrasi {ion_type} (mol/L):", min_value=1e-14, max_value=1.0, format="%.2e")
 
-# Apply dark mode
-if show_dark_mode:
-    st.markdown(
-        """
-        <style>
-            body { background-color: #1e1e1e; color: white; }
-            .stApp { background-color: #1e1e1e; }
-        </style>
-        """, unsafe_allow_html=True
-    )
-
 # Divider
 st.markdown("---")
 
